@@ -1,3 +1,7 @@
+
+
+---
+
 # Google OAuth Integration with Flask and React
 
 This project demonstrates how to integrate Google OAuth for user authentication and Gmail email sending using Flask (backend) and React (frontend). Users can authenticate with Google, send emails through Gmail, and view their profile information.
@@ -59,11 +63,22 @@ Replace the contents of the `client_secret.json` file with your own credentials.
    ```
 
 3. Place the `client_secret.json` file in the **backend** directory.
-4. Configure the backend settings:
+4. **Generate SSL Certificates**:
+   Before starting the Flask server, you need SSL certificates to enable secure communication. Run the following command to generate a new SSL certificate and key:
+
+   ```bash
+   openssl req -new -newkey rsa:2048 -days 365 -nodes -keyout server.key -out server.crt
+   ```
+
+   This command generates:
+   - `server.key`: The private key for SSL.
+   - `server.crt`: The certificate file for SSL.
+
+5. Configure the backend settings:
    - Make sure the `REDIRECT_URI` in the Flask app matches the URI set in Google Cloud Console (`https://localhost:3001/oauth2callback`).
    - The backend is set up to run on `https://localhost:3001`. Ensure you have the `server.crt` and `server.key` files for SSL.
    
-5. Run the Flask server:
+6. Run the Flask server:
 
    ```bash
    python server.py
@@ -145,4 +160,4 @@ The frontend is a React app that interacts with the Flask backend:
 - You will need SSL certificates (`server.crt`, `server.key`) for secure communication between the backend and frontend.
 - Modify the redirect URIs and origins in the Google Cloud Console if you deploy this app to production.
 
-----
+--- 
