@@ -4,11 +4,16 @@
 /node_modules
 /.pnp
 .pnp.js
-
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+frontend\node_modules
 # testing
 /coverage
+frontend/coverage
 
 # production
+frontend/build
 /build
 
 # misc
@@ -17,17 +22,30 @@
 .env.development.local
 .env.test.local
 .env.production.local
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
 # Ignore SSL certificate and key files
 server.key
 server.crt
 backend\server.crt
+backend\server.key
 # Ignore client secrets
 client_secret.json
 client_secret_*.json
-
+backend\client_secret.json
+backend\client_secret_*.json
 # Ignore any Flask session files or directories (if necessary)
 flask_session/
+backend\flask_session/
